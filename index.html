@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy First Rose Day 🌹</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Comic Sans MS','Poppins',cursive;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(135deg,#ffe6f0,#fff1f7,#fde2ea);
+  overflow:hidden;
+}
+
+/* PAGE SYSTEM */
+.page{
+  display:none;
+  min-height:100vh;
+  padding:30px 20px;
+  align-items:center;
+  justify-content:center;
+  animation:fade 0.8s ease;
+}
+
+.page.active{
+  display:flex;
+}
+
+/* CARD */
+.card{
+  background:#ffffff;
+  border-radius:28px;
+  padding:32px;
+  max-width:520px;
+  width:100%;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(255,150,180,.25);
+}
+
+/* TEXT */
+h1,h2{
+  color:#ff4d88;
+}
+
+p{
+  color:#555;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.stickers{
+  font-size:28px;
+  margin:12px 0;
+}
+
+/* BUTTON */
+.btn{
+  background:linear-gradient(135deg,#ff85b3,#ff4d88);
+  color:#fff;
+  border:none;
+  padding:14px 28px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:22px;
+  transition:.3s;
+  box-shadow:0 8px 20px rgba(255,100,150,.4);
+}
+
+.btn:hover{
+  transform:scale(1.08);
+}
+
+.choice{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+/* MUSIC */
+.music{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#fff;
+  border-radius:50%;
+  padding:12px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  z-index:10;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:scale(.95);}
+  to{opacity:1;transform:scale(1);}
+}
+
+@media(max-width:500px){
+  p{font-size:16px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+<div class="music" onclick="toggleMusic()">🎵</div>
+
+<!-- PAGE 1 -->
+<div class="page active">
+  <div class="card">
+    <h1 id="typing"></h1>
+    <div class="stickers">🌹🎀💖✨</div>
+    <p>
+      You are my love, my future husband 💕  
+      This is our <b>first Rose Day</b>,  
+      and it feels truly special.
+    </p>
+    <button class="btn" onclick="nextPage()">Start the Surprise 🎁</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="card">
+    <h2>My Love 🌸</h2>
+    <div class="stickers">🧸💗🌷</div>
+    <p>
+      On this first Rose Day,  
+      I want to thank you for being  
+      the one my heart chose.
+    </p>
+    <button class="btn" onclick="nextPage()">Next 🌷</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="card">
+    <h2>You and Rose 🌹</h2>
+    <div class="stickers">🌹💕✨</div>
+    <p>
+      You and rose feel connected —  
+      both are soft, graceful,  
+      and full of quiet beauty.
+    </p>
+    <button class="btn" onclick="nextPage()">Next 💕</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <div class="card">
+    <h2>A Cute Question 💖</h2>
+    <div class="stickers">😄💗🎀</div>
+    <p>Do you love me? 🌸</p>
+    <div class="choice">
+      <button class="btn" onclick="yesLove()">YES 💕</button>
+      <button class="btn" id="noBtn" onmouseover="moveNo()">NO 🙈</button>
+    </div>
+    <p id="reply"></p>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <div class="card">
+    <h2>My Peace 🧸</h2>
+    <div class="stickers">🧸💞✨</div>
+    <p>
+      With you, everything feels calm.  
+      You are my comfort  
+      and my safe place.
+    </p>
+    <button class="btn" onclick="nextPage()">Next 🌼</button>
+  </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+  <div class="card">
+    <h2>A Little Smile 😄</h2>
+    <div class="stickers">😄🌹💗</div>
+    <p>
+      Even roses would smile  
+      if they saw your kindness 🌹
+    </p>
+    <button class="btn" onclick="nextPage()">Next ✨</button>
+  </div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+  <div class="card">
+    <h2>Syed Qaiser Abbas Kazmi 💍</h2>
+    <div class="stickers">💍🌸💖</div>
+    <p>
+      You are not only my love,  
+      you are my future,  
+      my prayer, and my forever.
+    </p>
+    <button class="btn" onclick="nextPage()">Next 🌹</button>
+  </div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+  <div class="card">
+    <h2>Your Smile 🌷</h2>
+    <div class="stickers">🥰🌹✨</div>
+    <p>
+      Your smile is like a garden of roses 🌹  
+      soft, warm, and full of life.
+    </p>
+    <button class="btn" onclick="nextPage()">Next 💖</button>
+  </div>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page">
+  <div class="card">
+    <h2>First Rose Day Promise 💌</h2>
+    <div class="stickers">💌🌹🎀</div>
+    <p>
+      This is our first Rose Day,  
+      and I promise to choose you  
+      today and always.
+    </p>
+    <button class="btn" onclick="nextPage()">Final 🌸</button>
+  </div>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page">
+  <div class="card">
+    <h2>Forever 🌹</h2>
+    <div class="stickers">🌹💍💖✨</div>
+    <p>
+      Syed Qaiser Abbas Kazmi,  
+      You are my love, my future husband 💕  
+      Happy First Rose Day 🌹  
+      With all my heart.
+    </p>
+  </div>
+</div>
+
+<script>
+/* PAGE CONTROL */
+let current = 0;
+const pages = document.querySelectorAll('.page');
+
+function nextPage(){
+  if(current < pages.length - 1){
+    pages[current].classList.remove('active');
+    current++;
+    pages[current].classList.add('active');
+  }
+}
+
+/* TYPING EFFECT */
+const text = "Happy First Rose Day Syed Qaiser Abbas Kazmi 🌹";
+let i = 0;
+function typing(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 80);
+  }
+}
+typing();
+
+/* YES NO */
+function yesLove(){
+  document.getElementById("reply").innerHTML =
+    "That means everything to me 💖";
+}
+
+function moveNo(){
+  const b = document.getElementById("noBtn");
+  b.style.position = "relative";
+  b.style.left = Math.random()*80 - 40 + "px";
+}
+
+/* MUSIC */
+let playing = false;
+function toggleMusic(){
+  const m = document.getElementById("bgMusic");
+  if(!playing){
+    m.play();
+    playing = true;
+  }else{
+    m.pause();
+    playing = false;
+  }
+}
+</script>
+
+</body>
+</html>
